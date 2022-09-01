@@ -30,7 +30,11 @@ body {
 
 .grid-box {
     background-color: white;
-    border: 0.5px solid black;
+    border: 0.5px solid gray;
+}
+
+.grid-box:hover {
+    background-color: black;
 }
 
 
@@ -40,19 +44,35 @@ body {
     width: 200px;
     background-color: coral;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    gap: 20px
+    gap: 20px;
+    border-radius: 1em;
 }
 
 .new-grid {
-    width: 50%;
-    height: 5%;
+    width: 54%;
+    height: 6%;
+
     
 }
 
 .grid-input {
     width: 50%;
     height: 5%;
+    border-radius: 2px;
+    border: 0px;
+}
+
+.color-mode {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+
+}
+.color, .eraser {
+    padding: 30px;
+    background-color: white;
+    border-radius: 5em;
 }
