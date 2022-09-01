@@ -21,6 +21,8 @@ for(let i  = 0; i < 256; i++) {
     container.appendChild(gridBox);
 }
 
+gridColorChange();
+
 
 
 
@@ -35,6 +37,7 @@ function newGridApply() {
         container.appendChild(gridBox);
     }
     container.setAttribute('style', `display: grid;  grid-template-columns: repeat(${value}, auto); grid-template-rows: repeat(${value}, auto)`);
+    gridColorChange();
 }
 
 
@@ -52,13 +55,17 @@ function reset() {
     .forEach((e) => e.parentNode.removeChild(e));
 }
 
-document.querySelectorAll('.grid-box').forEach(e => {
-    e.addEventListener('mouseenter', () => { e.setAttribute('style', 
-    'background-color: black;')
+
+function gridColorChange() {
+
+    document.querySelectorAll('.grid-box').forEach(e => {
+        e.addEventListener('mouseenter', () => { e.setAttribute('style', 
+        'background-color: black;')
+        });
     });
-});
 
 
+}
 
    
 
