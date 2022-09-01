@@ -5,13 +5,17 @@ gridBox.classList.add('grid-box');
 const sideBar = document.querySelector('.side-bar');
 const newGridBtn = document.querySelector('.new-grid');
 const gridInput = document.querySelector('.grid-input');
+const eraseMode = document.querySelector('.eraser');
 
 
 
 newGridBtn.addEventListener('click', newGridApply);
+eraseMode.addEventListener('click', eraseModeActivate);
+
 
 
 let valueMultiply = 256;
+let isColorMode = true;
 
 
 //creates a 16 x 16 grid default
@@ -57,14 +61,29 @@ function reset() {
 
 
 function gridColorChange() {
-
-    document.querySelectorAll('.grid-box').forEach(e => {
-        e.addEventListener('mouseenter', () => { e.setAttribute('style', 
-        'background-color: black;')
+    if(isColorMode == true) {
+        document.querySelectorAll('.grid-box').forEach(e => {
+            e.addEventListener('mouseenter', () => { e.setAttribute('style', 
+            'background-color: black;')
+            });
         });
-    });
+    }  
+    
+    else {
+        document.querySelectorAll('.grid-box').forEach(e => {
+            e.addEventListener('mouseenter', () => { e.setAttribute('style', 
+            'background-color: white;')
+            });
+        });
+    }
 
 
+}
+
+
+function eraseModeActivate() {
+    isColorMode = false;
+    gridColorChange();
 }
 
    
