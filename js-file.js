@@ -6,11 +6,14 @@ const sideBar = document.querySelector('.side-bar');
 const newGridBtn = document.querySelector('.new-grid');
 const gridInput = document.querySelector('.grid-input');
 const eraseMode = document.querySelector('.eraser');
+const colorMode = document.querySelector('.color');
 
 
 
 newGridBtn.addEventListener('click', newGridApply);
 eraseMode.addEventListener('click', eraseModeActivate);
+colorMode.addEventListener('click', colorModeActivate);
+
 
 
 
@@ -85,6 +88,12 @@ function eraseModeActivate() {
     isColorMode = false;
     gridColorChange();
 }
+
+function colorModeActivate() {
+    isColorMode = true;
+    gridColorChange();
+}
+
 
    
 
